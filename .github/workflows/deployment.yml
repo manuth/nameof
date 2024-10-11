@@ -103,5 +103,5 @@ jobs:
           name: ${{ needs.collect-changelog.outputs.title }}
           body: ${{ needs.collect-changelog.outputs.notes }}
           files: |
-            "*.tgz"
-            "packages/vscode/*.vsix"
+            *.tgz
+            packages/vscode/*.vsix
