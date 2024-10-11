@@ -1,0 +1,13 @@
+name: Publish
+
+on:
+  workflow_dispatch:
+
+jobs:
+  publish:
+    name: Publish
+    uses: ./.github/workflows/deployment.yml
+    secrets:
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      OVSX_TOKEN: ${{ secrets.OVSX_TOKEN }}
+      VSCE_TOKEN: ${{ secrets.VSCE_TOKEN }}
