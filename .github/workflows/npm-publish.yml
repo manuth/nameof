@@ -13,7 +13,8 @@ on:
         required: true
 
 jobs:
-  check:
+  publish:
+    name: Publish to NPM Package Registry
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -24,7 +25,7 @@ jobs:
           registry-url: ${{ inputs.registry }}
       - name: Install Dependencies
         run: npm clean-install
-      - name: Publish NPM Package
+      - name: Publish to NPM Package Registry
         run: npm publish --dry-run
         env:
           NODE_AUTH_TOKEN: ${{ secrets.npmToken }}
