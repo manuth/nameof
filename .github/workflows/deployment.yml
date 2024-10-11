@@ -85,6 +85,7 @@ jobs:
     needs:
       - collect-changelog
     steps:
+      - uses: actions/checkout@v4
       - name: Install Dependencies
         run: npm clean-install
       - name: Create NPM Packages
